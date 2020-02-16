@@ -1,6 +1,6 @@
 from psutil import *
 from time import sleep
-#from logging import info
+from logging import info
 
 #config 
 cpuinfo=True
