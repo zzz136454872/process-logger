@@ -1,5 +1,6 @@
 from psutil import *
 from time import sleep
+#from logging import info
 
 #config 
 cpuinfo=True
@@ -8,10 +9,9 @@ toFile=False
 filename='log.txt'
 hold=10
 
-
-if(cpu_info):
-    print("CPU核心数量: ",psutil.cpu_count(logical=False) # CPU物理核心
-    print("CPU线程数量: ",psutil.cpu_count() # CPU逻辑数量
+if cpuinfo:
+    print("CPU核心数量: ",cpu_count(logical=False)) # CPU物理核心
+    print("CPU线程数量: ",cpu_count()) # CPU逻辑数量
     #获取CPU不同状态运行时间
     print(cpu_times())
     print('CPU 执行用户进程时间：', cpu_times().user)
