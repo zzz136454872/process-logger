@@ -15,6 +15,15 @@ pstuils
 pip install -r requirements.txt
 ```
 
+## 配置信息
+* cpuinfo=True 显示cpu信息
+* refresh = 5  刷新时间（秒） 
+* toFile=True  是否输出到文件
+* filename='cpu_use.log' 输出的文件名
+* hold=5       占用比例高于多少时进行记录
+* rounds = 0   工作轮数，0 -> 一直工作
+
+
 ## contact
 
 我的邮箱是 zzz136454872@163.com
