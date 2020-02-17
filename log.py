@@ -3,11 +3,12 @@ from time import sleep
 from logging import getLogger, FileHandler, info, StreamHandler,INFO,DEBUG,Formatter
 
 #config 
-cpuinfo=True
-refresh = 5
-toFile=True
-filename='cpu_use.log'
-hold=10
+cpuinfo=True # show cpu info 
+refresh = 5  # time before refresh 
+toFile=True  # log to file
+filename='cpu_use.log' # log file name (does not work when toFile = False)
+hold=5       # the minimal cpu percent to log
+rounds = 0 # work rounds 0 => inf
 
 logger=getLogger()
 logger.setLevel(DEBUG)
@@ -56,7 +57,10 @@ for pid in pid_list:
         ps[pid]=p
     ps[pid].cpu_percent()
 
-while(True):
+if rounds == 0:
+    rounds=1<<63 # not good but very simple 
+
+for round in range(rounds):
     #info("round: %d",i)
     i+=1
     pid_list = pids()
