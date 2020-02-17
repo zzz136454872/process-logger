@@ -75,8 +75,8 @@ for round in range(rounds):
             if(tmp_time > hold):
                 info('pid: '+str(pid))
                 info('进程名称: '+str( ps[pid].name()))          #进程名称
-                #info('运行状态:'+str( p.status())        #当前状态
-                #info('创建时间:'+str( p.create_time())   #创建时间
+                #info('运行状态:'+str( p.status()))        #当前状态
+                #info('创建时间:'+str( p.create_time()))   #创建时间
                 info('CPU信息: '+str(  ps[pid].cpu_times()))     #进程的cpu时间信息+str(主要：user+str(system运行时间
                 info('CPU时间: '+str( tmp_time))
         except Exception as e:
@@ -84,6 +84,5 @@ for round in range(rounds):
             print(e.message)
             continue
     sleep(refresh)
-
 
 
