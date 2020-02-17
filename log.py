@@ -79,8 +79,9 @@ for round in range(rounds):
                 #info('创建时间:'+str( p.create_time())   #创建时间
                 info('CPU信息: '+str(  ps[pid].cpu_times()))     #进程的cpu时间信息+str(主要：user+str(system运行时间
                 info('CPU时间: '+str( tmp_time))
-        except Exception:
-            info("now")
+        except Exception as e:
+            info("an execption occured!")
+            print(e.message)
             continue
     sleep(refresh)
 
